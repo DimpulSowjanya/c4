@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f172a; /* Slate 900 */
+  --foreground: #f8fafc; /* Slate 50 */
+}
+
+/* Accessibility High Contrast Theme rules */
+.accessibility-mode {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Accessibility custom helpers */
+.accessibility-mode button, 
+.accessibility-mode a, 
+.accessibility-mode input, 
+.accessibility-mode select {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.accessibility-mode .text-muted-foreground {
+  color: #e2e8f0 !important;
+}
+
+.accessibility-mode .bg-card {
+  background-color: #111111 !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.6);
+}
