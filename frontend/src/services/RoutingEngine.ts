@@ -70,10 +70,11 @@ export class RoutingEngine {
     while (queue.size > 0) {
       let uId: string | null = null;
       let minDistance = Infinity;
-      for (const id of queue) {
+      Array.from(queue).forEach((id) => {
         const dist = distances.get(id) !== undefined ? distances.get(id)! : Infinity;
         if (dist < minDistance) {
           minDistance = dist;
+
           uId = id;
         }
       }
