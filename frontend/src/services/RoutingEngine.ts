@@ -71,8 +71,10 @@ export class RoutingEngine {
       let uId: string | null = null;
       let minDistance = Infinity;
       
-      // Fixed: Iterating explicitly through a standard array instance
-      for (const id of Array.from(queue)) {
+      // Fixed: Structural conversion matrix loop handles downlevel iteration flags safely
+      const items = Array.from(queue);
+      for (let i = 0; i < items.length; i++) {
+        const id = items[i];
         const dist = distances.get(id) !== undefined ? distances.get(id)! : Infinity;
         if (dist < minDistance) {
           minDistance = dist;
@@ -132,7 +134,7 @@ export class RoutingEngine {
       current = previous.get(current) || null;
     }
 
-    if (path[0] !== fromId) {
+    if (path.length === 0 || path[0] !== fromId) {
       return null;
     }
 
