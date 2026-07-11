@@ -1,17 +1,13 @@
 {
-  "version": 2,
+  "$schema": "https://vercel.sh",
   "services": {
     "frontend": {
       "root": "frontend",
-      "framework": "nextjs",
-      "env": {
-        "TS_NODE_COMPILER_OPTIONS": "{\"target\":\"es2022\",\"downlevelIteration\":true}"
-      }
+      "framework": "nextjs"
     },
     "backend": {
       "root": "backend",
-      "framework": "express",
-      "entrypoint": "src/server.js"
+      "framework": "express"
     }
   }
 }
