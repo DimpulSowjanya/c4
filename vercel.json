@@ -3,7 +3,10 @@
   "services": {
     "frontend": {
       "root": "frontend",
-      "framework": "nextjs"
+      "framework": "nextjs",
+      "env": {
+        "TS_NODE_COMPILER_OPTIONS": "{\"target\":\"es2022\",\"downlevelIteration\":true}"
+      }
     },
     "backend": {
       "root": "backend",
